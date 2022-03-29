@@ -2,6 +2,15 @@ import React, {useEffect, useState} from "react";
 import Products from "./components/Products";
 import Basket from "./components/Basket";
 
+// ==============
+// Am folosit Tailwind pt ca .. imi place
+// Nu am gasit in pozele respective nicaieri butonul de remove, asa ca am improvizat
+// La produse preturi am mai improvizat
+// Este facut doar pentru desktop
+// Ca e ok sau nu, as aprecia un feedback de la developer ca sa stiu ce trebuie sa imbunatatesc
+// Multumesc
+// ===============
+
 function App() {
 	const [products, setProducts] =useState([])
 	const [cartItems, setCartItems] = useState([]);

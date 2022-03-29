@@ -14,7 +14,7 @@ const Basket = (props) => {
 				<div className="h-96 mt-16 bg-slate-100 p-8 m-4 border">No products in your shopping cart</div>}
 			{/*=====*/}
 			{cartItems.length !== 0 && <div className="py-8 px-2 md:p-8 m-0 md:m-4 bg-slate-100 border">
-				<h3>Products in your shopping cart</h3>
+				<h3 className='text-stone-500 font-thin text-2xl'>Products in your shopping cart</h3>
 
 				<table className="table-auto w-full">
 					<thead className="border-b">
