@@ -1,11 +1,9 @@
 import {BsFillCartCheckFill} from "react-icons/bs";
-// BsFillCartCheckFill
+
 export default function Product(props) {
 	const { product, onAdd } = props;
-	// console.log(product.price);
 	return (
 		<div className='flex flex-row items-center bg-white my-4 p-4'>
-			{/*<img className="small" src={product.img} alt={product.name} />*/}
 			<div className="basis-1/2">
 				<h3>{product.name}</h3>
 			</div>
@@ -18,17 +16,9 @@ export default function Product(props) {
 					<span className='mb-1 pr-4'>
 						<BsFillCartCheckFill />
 					</span>
-
 					Add To Cart
 				</button>
 			</div>
-
-
-
-			{/*<p className='my-4'>{product.id}</p>*/}
-			{/*<div>*/}
-			{/*	*/}
-			{/*</div>*/}
 		</div>
 	);
 }

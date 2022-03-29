@@ -7,6 +7,7 @@ function App() {
 	const [cartItems, setCartItems] = useState([]);
 
 	const URL = 'http://private-32dcc-products72.apiary-mock.com/product';
+
 	const getData = async () => {
 		const res = await fetch(URL);
 		const data = await res.json();
@@ -56,7 +57,6 @@ function App() {
 					    onRemove={onRemove}
 					/>
 				</div>
-
 			</section>
 		</main>
 	);
