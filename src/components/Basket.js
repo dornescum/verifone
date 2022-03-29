@@ -1,84 +1,66 @@
 import React from 'react';
+import {BsFillCartCheckFill} from "react-icons/bs";
 
 const Basket = (props) => {
 	const {cartItems, onAdd, onRemove} = props;
+	console.log(cartItems);
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 
 	return (
-		<div className="p-8 m-4 bg-zinc-100 border">
-			<h3>Products in your shopping cart</h3>
-			{/*{cartItems.length === 0 && <div>Cart is empty</div>}*/}
+		<div className="">
 
-			<table className="table-auto w-full">
-				<thead className="border-b">
-				<tr>
-					<th className="text-left">Product</th>
-					<th className="text-right">Quantity</th>
-					<th className="text-right">Value</th>
-				</tr>
-				</thead>
-				<tbody>
-				{/*{cartItems.map((item) => (*/}
-				{/*	<tr className="" key={item.id}>*/}
-				{/*		<td>{item.name}</td>*/}
-				{/*		<td className="text-right">*/}
-				{/*			<div className='bg-white'>*/}
-				{/*				{item.qty} x ${item.price.toFixed(2)}*/}
-				{/*				<button onClick={() => onRemove(item)} className="remove">-</button>*/}
-				{/*				<button onClick={() => onAdd(item)} className="remove">+</button>*/}
-				{/*			</div>*/}
-
-
-				{/*			</td>*/}
-				{/*		/!*<td className="text-right"><input type="number"  placeholder={item.qty}*!/*/}
-				{/*		/!*								  onKeyDown={() => onRemove(item)}/></td>*!/*/}
+			{cartItems.length === 0 && <div className='h-96 mt-16 bg-slate-100 p-8 m-4 border'>No products in your shopping cart</div>}
+			{cartItems.length !== 0 && <div className='p-8 m-4 bg-slate-100 border'>
+				<h3>Products in your shopping cart</h3>
+				<table className="table-auto w-full">
+					<thead className="border-b" style={{marginBottom: 0, paddingBottom: 0}}>
+					<tr className='text-zinc-500 text-sm'>
+						<th className="text-left">Product</th>
+						<th className="text-right">Quantity</th>
+						<th className="text-right">Value</th>
+					</tr>
+					</thead>
+					<tbody className='border-b-4 border-b-gray-500'>
+					{cartItems.map((item) => (
+						<tr className="" key={item.id}>
+							<td>{item.name}</td>
+							<td className="text-right">
+								<div className=''>
+								<span className='bg-white px-4'>
+									{item.qty}
+								</span>
+									<button onClick={() => onAdd(item)} className="remove">^</button>
+									<button onClick={() => onRemove(item)} className="remove">v</button>
+								</div>
 
 
-				{/*		<td className="text-right">${itemsPrice.toFixed(2)}</td>*/}
-				{/*	</tr>*/}
-				{/*))}*/}
-				</tbody>
-			</table>
+							</td>
 
-			{cartItems.map((item) => (
-				<div key={item.id} className="">
-					<div className="">{item.name}</div>
-					<div className="">
-						<button onClick={() => onRemove(item)} className="remove">
-							-
-						</button>{' '}
-						<button onClick={() => onAdd(item)} className="add">
-							+
-						</button>
-					</div>
-
-					<div className=" text-right">
-						{item.qty} x ${item.price.toFixed(2)}
-					</div>
-				</div>
-			))}
-
-			{cartItems.length !== 0 && (
-				<>
-					<hr></hr>
-					<div className="">
-						<div className="">Items Price</div>
-						<div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
-					</div>
-
-
-					<div className="">
-						{/*<div className="">*/}
-						{/*	<strong>Total Price</strong>*/}
-						{/*</div>*/}
-						<div className="col-1 text-right">
-							{/*<strong>${totalPrice.toFixed(2)}</strong>*/}
+							<td className="text-right">$ {item.price}</td>
+						</tr>
+					))}
+					</tbody>
+				</table>
+				{cartItems.length !== 0 && (
+					<>
+						<hr></hr>
+						<div className="flex flex-row justify-between py-8">
+							<div className=""></div>
+							<div className="col-1 text-right">Total: ${itemsPrice.toFixed(2)}</div>
 						</div>
-					</div>
-					<hr/>
 
-				</>
-			)}
+						<hr/>
+						<button  className='bg-green-400 hover:bg-green-600 transition duration-300
+				 text-white py-2 px-4 flex items-center justify-center w-full text-2xl'>
+							Continue
+						</button>
+					</>
+				)}
+			</div>}
+
+
+
+
 		</div>
 	);
 };

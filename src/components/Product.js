@@ -19,7 +19,8 @@ export default function Product(props) {
 						<BsFillCartCheckFill />
 					</span>
 
-					Add To Cart</button>
+					Add To Cart
+				</button>
 			</div>
 
 

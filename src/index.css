@@ -10,6 +10,14 @@ tbody:before, thead:after {
     line-height: 1rem;
     color: transparent;
 }
-tr:before {
-   line-height: 1rem;
+
+th, td {
+    padding: 1rem 0;
+}
+#title:after {
+    content: " ";
+    display: block;
+    border-bottom: 3px solid #60A5FA;
+    width: 40px;
+    margin-top: 1rem;
 }

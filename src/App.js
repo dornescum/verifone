@@ -45,7 +45,7 @@ function App() {
 
 	return (
 		<main className="pt-40 bg-slate-50 min-h-screen font-rubik">
-			<section className="mx-96  mt-4 mb-4 flex flex-col md:flex-row  justify-center items-center">
+			<section className="mx-12 md:mx-96  mt-4 mb-4 flex flex-col md:flex-row  justify-center items-center">
 				<div className="basis-1/2">
 					<Products products={products} onAdd={onAdd}/>
 				</div>
